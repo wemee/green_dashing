@@ -31,3 +31,29 @@ SCHEDULER.every '2s' do
 
   send_event('power1', points: points)
 end
+
+# ###################
+# require 'json'
+#
+# `curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "current": 43, "last": 43 }' \http://dashboard.hi178.tw/widgets/reactive_power1`
+#
+# points = []
+# (1..10).each do |i|
+#   points << { x: i, y: rand(30..50) }
+# end
+# last_x = points.last[:x]
+#
+# current_energy = 0
+# loop do
+#   sleep 2
+#   last_energy = current_energy
+#   current_energy = rand(9..12)
+#   `curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "value": #{rand(100..115)} }' \http://dashboard.hi178.tw/widgets/voltage1`
+#   `curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "value": #{rand(400..600)} }' \http://dashboard.hi178.tw/widgets/amp1`
+#   `curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "current": #{current_energy}, "last": #{last_energy} }' \http://dashboard.hi178.tw/widgets/energy1`
+#
+#   points.shift
+#   last_x += 1
+#   points << { x: last_x, y: rand(30..50) }
+#   `curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "points": #{JSON.generate(points)} }' \http://dashboard.hi178.tw/widgets/power1`
+# end
