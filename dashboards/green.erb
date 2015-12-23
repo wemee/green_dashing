@@ -13,7 +13,7 @@
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="amp1" data-view="Meter" data-title="電流(mA)" data-min="0" data-max="1000"></div>
     </li>
-
+    
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="energy1" data-view="Number" data-title="每小時耗電(KWh)" style="background-color:#96bf48;"></div>
       <i class="icon-heart icon-background"></i>
@@ -46,6 +46,13 @@
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-view="Image" data-image="/Snapshot_Processed_CH1_20151028120453.jpeg"></div>
     </li>
+
+    <video width="320" height="240" controls>
+      <source src="/Record_Processed_CH1_20151028115636.avi" type="video/mp4">
+    </video>
+
+
+
 
   </ul>
   <center><div style="font-size: 12px">Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' \http://<%=request.host%>:<%=request.port%>/widgets/welcome</div></center>

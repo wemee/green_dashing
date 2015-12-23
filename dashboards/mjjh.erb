@@ -1,0 +1,47 @@
+<% school = "mjjh" %>
+<% room = params["room_id"] %>
+<% content_for :title do %>名間國中<% end %>
+
+<h1>名間國中<br>
+  <% case room
+    when '0' %>
+    飲水機
+  <% when '1' %>
+    電燈
+  <% when '2' %>
+    圖書館
+  <% end %>
+</h1>
+<div style="height: 25px;"></div>
+
+<div class="gridster">
+  <ul>
+    <!-- <% 9.times do |n| %> -->
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="5">
+      <div data-id="<%= school %>_<%= room %>_device_<%= n %>" data-view="Text" data-title="智慧插座1" data-text="開啟中" data-moreinfo=""></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="5">
+      <div data-id="<%= school %>_<%= room %>_voltage_<%= n %>" data-view="Meter" data-title="電壓(V)" data-min="0" data-max="150"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="5">
+      <div data-id="<%= school %>_<%= room %>_amp_<%= n %>" data-view="Meter" data-title="電流(mA)" data-min="0" data-max="1000"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="5">
+      <div data-id="<%= school %>_<%= room %>_reactive_power_<%= n %>" data-view="Number" data-title="設備重開耗電" style="background-color:#96bf48;"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="5">
+      <div data-id="<%= school %>_<%= room %>_energy_<%= n %>" data-view="Number" data-title="累積耗電(度)" style="background-color:#96bf48;"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="5">
+      <div data-id="<%= school %>_<%= room %>_power_<%= n %>" data-view="Graph" data-title="功率(瓦特)" style="background-color:#ff9618"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="1"></li>
+    <!-- <% end %> -->
+  </ul>
+</div>
+<!-- <iframe src="http://www.leosys.com" frameBorder="0"> -->
