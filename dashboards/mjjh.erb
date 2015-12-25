@@ -16,36 +16,35 @@
 
 <div class="gridster">
   <ul>
-    <%
-    ["20F85EA966C3", "20F85EA9546A", "20F85EA95CC2", "20F85EA972D1", "20F85EA95D19", "20F85EAA0D75", "20F85EA96E6E", "20F85EA96E8C",
-     "20F85EA963F8", "20F85EA96E72", "20F85EA972D9", "20F85EA95C63", "20F85EAA7654", "20F85EAA54DD", "20F85EAA29E3", "20F85EAA75FC",
-     "20F85EA96732", "20F85EAA2A35", "20F85EAA0F47", "20F85EAA100E", "20F85EAA10EF", "20F85EAA508B", "20F85EAA104A", "20F85EAA1508",
-     "20F85EA9C6C9", "20F85EAA74A6", "20F85EAA753A", "20F85EAA14DB", "20F85EAA14C9", "20F85EAA764C", "20F85EAA7746", "20F85EAA6D9B",
-     "20F85EAA7515", "20F85EAA766F", "20F85EAA51B7", "20F85EAA73BB", "20F85EAA6F75", "20F85EAA7575", "20F85EAA5104", "20F85EAA6F90",
-     "20F85EAA746B", "20F85EAA74D9", "20F85EAA6DC6", "20F85EAA0CA9", "20F85EAA73AE", "20F85EAA2885", "20F85EAA75E4", "20F85EAA6F31",
-     "20F85EAA75B6", "20F85EAA7213", "20F85EAA6F4D", "20F85EAA75EB", "20F85EAA6F94", "20F85EAA51B1", "20F85EAA73A9", "20F85EAA5211",
-     "20F85EAA55E5", "20F85EAA7753", "20F85EAA6DA1", "20F85EAA726E", "20F85EAA7667", "20F85EAA7223", "20F85EAA7514", "20F85EAA6DE7",
-     "20F85EAA7662", "20F85EAA7487", "20F85EAA50A9", "20F85EAA7788", "20F85EAA7443", "20F85EAA75B5"].each do |devId| %>
-       <li data-row="1" data-col="1" data-sizex="2" data-sizey="5">
-         <div data-id="device_<%= devId %>" data-view="Text" data-title="智慧插座1" data-text="開啟中" data-moreinfo=""></div>
-       </li>
+    <% ["20F85EA966C3", "20F85EA9546A", "20F85EA95CC2", "20F85EA972D1", "20F85EA95D19", "20F85EAA0D75", "20F85EA96E6E", "20F85EA96E8C",
+        "20F85EA963F8", "20F85EA96E72", "20F85EA972D9", "20F85EA95C63", "20F85EAA7654", "20F85EAA54DD", "20F85EAA29E3", "20F85EAA75FC",
+        "20F85EA96732", "20F85EAA2A35", "20F85EAA0F47", "20F85EAA100E", "20F85EAA10EF", "20F85EAA508B", "20F85EAA104A", "20F85EAA1508",
+        "20F85EA9C6C9", "20F85EAA74A6", "20F85EAA753A", "20F85EAA14DB", "20F85EAA14C9", "20F85EAA764C", "20F85EAA7746", "20F85EAA6D9B",
+        "20F85EAA7515", "20F85EAA766F", "20F85EAA51B7", "20F85EAA73BB", "20F85EAA6F75", "20F85EAA7575", "20F85EAA5104", "20F85EAA6F90",
+        "20F85EAA746B", "20F85EAA74D9", "20F85EAA6DC6", "20F85EAA0CA9", "20F85EAA73AE", "20F85EAA2885", "20F85EAA75E4", "20F85EAA6F31",
+        "20F85EAA75B6", "20F85EAA7213", "20F85EAA6F4D", "20F85EAA75EB", "20F85EAA6F94", "20F85EAA51B1", "20F85EAA73A9", "20F85EAA5211",
+        "20F85EAA55E5", "20F85EAA7753", "20F85EAA6DA1", "20F85EAA726E", "20F85EAA7667", "20F85EAA7223", "20F85EAA7514", "20F85EAA6DE7",
+        "20F85EAA7662", "20F85EAA7487", "20F85EAA50A9", "20F85EAA7788", "20F85EAA7443", "20F85EAA75B5"].each do |devId| %>
+          <li data-row="1" data-col="1" data-sizex="2" data-sizey="5">
+            <div data-id="device_<%= devId %>" data-view="Text" data-title="智慧插座1" data-text="開啟中" data-moreinfo=""></div>
+          </li>
 
-       <li data-row="1" data-col="1" data-sizex="1" data-sizey="5">
-         <div data-id="voltage_<%= devId %>" data-view="Meter" data-title="電壓(V)" data-min="0" data-max="300" data-value="110"></div>
-       </li>
+          <li data-row="1" data-col="1" data-sizex="1" data-sizey="5">
+            <div data-id="voltage_<%= devId %>" data-view="Meter" data-title="電壓(V)" data-min="0" data-max="300" data-value="110"></div>
+          </li>
 
-       <li data-row="1" data-col="1" data-sizex="1" data-sizey="5">
-         <div data-id="amp_<%= devId %>" data-view="Meter" data-title="電流(mA)" data-min="0" data-max="5000"></div>
-       </li>
+          <li data-row="1" data-col="1" data-sizex="1" data-sizey="5">
+            <div data-id="amp_<%= devId %>" data-view="Meter" data-title="電流(A)" data-min="0" data-max="50"></div>
+          </li>
 
-       <li data-row="1" data-col="1" data-sizex="2" data-sizey="5">
-         <div data-id="energy_<%= devId %>" data-view="Graph" data-title="累積耗電(度)" style="background-color:#96bf48;"></div>
-       </li>
+          <li data-row="1" data-col="1" data-sizex="2" data-sizey="5">
+            <div data-id="energy_<%= devId %>" data-view="Graph" data-title="累積耗電(度)" style="background-color:#96bf48;"></div>
+          </li>
 
-       <li data-row="1" data-col="1" data-sizex="2" data-sizey="5">
-         <div data-id="power_<%= devId %>" data-view="Graph" data-title="功率(瓦特)" style="background-color:#ff9618"></div>
-       </li>
-       <li data-row="1" data-col="1" data-sizex="4" data-sizey="1"></li>
+          <li data-row="1" data-col="1" data-sizex="2" data-sizey="5">
+            <div data-id="power_<%= devId %>" data-view="Graph" data-title="功率(瓦特)" style="background-color:#ff9618"></div>
+          </li>
+          <li data-row="1" data-col="1" data-sizex="4" data-sizey="1"></li>
     <% end %>
   </ul>
 </div>
