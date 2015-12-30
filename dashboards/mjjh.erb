@@ -63,9 +63,9 @@
                    {device: '會議室 燈 後', devId: '20F85EA96E8C', volt: '100'},
                    {device: '會議室 風扇 前', devId: '20F85EA966C3', volt: '100'},
                    {device: '會議室 風扇 後', devId: '20F85EAA1508', volt: '100'}],
-               d: [{ device: '燈', devId: '20F85EAA29E3', vlot: '100'},
-                   {device: '風扇', devId: '20F85EAA0D75', vlot: '100'},
-                   {device: '電子白版', devId: '20F85EA20F85EA', vlot: '100'}],
+               d: [{ device: '燈', devId: '20F85EAA29E3', volt: '100'},
+                   {device: '風扇', devId: '20F85EAA0D75', volt: '100'},
+                   {device: '電子白版', devId: '20F85EA20F85EA', volt: '100'}],
                r105: [{device: '燈', devId: '20F85EAA74A6', volt: '100'},
                       {device: '風扇', devId: '20F85EAA508B', volt: '100'},
                       {device: '平板充電車', devId: '20F85EAA0F47', volt: '100'},
@@ -95,7 +95,7 @@
             </li>
 
             <li data-row="1" data-col="1" data-sizex="1" data-sizey="5">
-              <div data-id="voltage_<%= dev[:devId] %>" data-view="Meter" data-title="電壓(V)" data-min="0" data-max="300" data-value=<%= dev[:volt] %>></div>
+              <div data-id="voltage_<%= dev[:devId] %>" data-view="Meter" data-title="電壓(V)" data-min="0" data-max="300" data-value="<%= dev[:volt] %>"></div>
             </li>
 
             <li data-row="1" data-col="1" data-sizex="1" data-sizey="5">
