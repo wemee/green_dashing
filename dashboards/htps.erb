@@ -1,0 +1,90 @@
+<% school = "htps" %>
+<% room = params["room"] || 'a' %>
+<% content_for :title do %>河堤國小<% end %>
+
+<h1>河堤國小<br>
+  <% case room
+     when 'a' %>
+      2樓教室外
+  <% when 'b' %>
+      總務處
+  <% when 'c' %>
+      會議室
+  <% when 'd' %>
+      智慧教室
+  <% when 'r105' %>
+      105 教室
+  <% when 'r106' %>
+      106 教室
+  <% when 'r205' %>
+      205 教室
+  <% when 'r206' %>
+      206 教室
+  <% when 'r207' %>
+      207 教室
+  <% when 'r302' %>
+      302 教室
+  <% end %>
+</h1>
+
+<div style="height: 25px;"></div>
+
+<nav style="width:1180px;margin: 0px auto;">
+  <table>
+    <tr>
+      <td><a href="/<%= school %>?room=a">2樓教室外</a></td>
+      <td><a href="/<%= school %>?room=r3F">3樓</a></td>
+    </tr>
+    <tr>
+      <td><a href="/<%= school %>?room=r501">501 教室</a></td>
+      <td><a href="/<%= school %>?room=r502">502 教室</a></td>
+    </tr>
+  </table>
+</nav>
+<div style="height: 25px;"></div>
+
+<div class="gridster">
+  <ul>
+  <% {r501: [{device: '燈', devId: '20F85EAA1162', volt: '220'},
+                      {device: '風扇', devId: '20F85EAA0F81', volt: '220'},
+                      {device: '電子白板', devId: '20F85EA95D05', volt: '110'},
+                      {device: '充電車', devId: '20F85EAA109F', volt: '110'},
+                      {device: '電視', devId: '20F85EAA5507', volt: '110'},
+                      {device: '插座(電腦)', devId: '20F85EA96E8E', volt: '110'}],
+               r502: [{device: '燈', devId: '20F85EAA0F91', volt: '220'},
+                      {device: '風扇', devId: '20F85EAA1509', volt: '220'},
+                      {device: '電子白板', devId: '20F85EAA0F67', volt: '110'},
+                      {device: '充電車', devId: '20F85EA96EA6', volt: '110'},
+                      {device: '電視', devId: '20F85EA9731D', volt: '110'},
+                      {device: '插座(電腦)', devId: '20F85EAA5507', volt: '110'}],
+               a:    [{device: '燈 1', devId: '20F85EAA116D', volt: '220'},
+                      {device: '燈 2', devId: '20F85EAA1222', volt: '220'},
+                      {device: '風扇 1', devId: '20F85EAA0F78', volt: '220'},
+                      {device: '風扇 2', devId: '20F85EAA0F36', volt: '220'},
+                      {device: '影印機', devId: '20F85EAA1271', volt: '110'},
+                      {device: 'EPSON 印表機', devId: '20F85EA95A08', volt: '110'}],
+               r3F:  [{device: '飲水機',	devId:'20F85EAA116F', volt: '220'}]
+           }[room.to_sym].each do |dev| %>
+            <li data-row="1" data-col="1" data-sizex="2" data-sizey="5">
+              <div data-id="device_<%= dev[:devId] %>" data-view="Text" data-title="<%= dev[:device] %>" data-text="開啟中" data-moreinfo=""></div>
+            </li>
+
+            <li data-row="1" data-col="1" data-sizex="1" data-sizey="5">
+              <div data-id="voltage_<%= dev[:devId] %>" data-view="Meter" data-title="電壓(V)" data-min="0" data-max="300" data-value="<%= dev[:volt] %>"></div>
+            </li>
+
+            <li data-row="1" data-col="1" data-sizex="1" data-sizey="5">
+              <div data-id="amp_<%= dev[:devId] %>" data-view="Meter" data-title="電流(A)" data-min="0" data-max="20"></div>
+            </li>
+
+            <li data-row="1" data-col="1" data-sizex="2" data-sizey="5">
+              <div data-id="energy_<%= dev[:devId] %>" data-view="Graph" data-title="累積耗電(度)" style="background-color:#96bf48;"></div>
+            </li>
+
+            <li data-row="1" data-col="1" data-sizex="2" data-sizey="5">
+              <div data-id="power_<%= dev[:devId] %>" data-view="Graph" data-title="功率(瓦特)" style="background-color:#ff9618"></div>
+            </li>
+            <li data-row="1" data-col="1" data-sizex="4" data-sizey="1"></li>
+     <% end %>
+  </ul>
+</div>
